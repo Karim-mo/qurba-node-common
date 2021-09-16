@@ -1,6 +1,6 @@
 {
 	"name": "qurba-node-common",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Common code shared between auth and data servers",
 	"main": "index.js",
 	"type": "module",
@@ -14,8 +14,13 @@
 	},
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
+		"colors": "^1.4.0",
 		"dotenv": "^10.0.0",
+		"express-async-handler": "^1.1.4",
+		"express-validator": "^6.12.1",
 		"jsonwebtoken": "^8.5.1",
-		"mongoose": "^6.0.6"
+		"mongoose": "^6.0.6",
+		"passport": "^0.4.1",
+		"passport-jwt": "^4.0.0"
 	}
 }

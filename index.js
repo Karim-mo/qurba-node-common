@@ -1,20 +1,28 @@
 import userAuth from './auth/jwt strategy/jwt.js';
 import userSchema from './db/schemas/User.js';
 import restaurantSchema from './db/schemas/Restaurant.js';
-import menuItemSchema from './db/schemas/MenuItem.js';
-import userValidation from './validation/user/user-validation.js';
-import restaurantValidation from './validation/restaurant/restaurant-validation.js';
-import itemValidation from './validation/item/item-validation.js';
+import validation from './validation/validation.js';
+import pathHandler from './middleware/path-handler.js';
+import errorHandler from './middleware/error-handler.js';
+import dbConnection from './db/connection/connect.js';
 
 const exports = {
-	UserAuth_JWT: userAuth,
-	User: userSchema,
-	Restaurant: restaurantSchema,
-	MenuItem: menuItemSchema,
+	Auth: {
+		UserAuth_JWT: userAuth,
+	},
 	FormValidation: {
-		User: userValidation,
-		Restaurant: restaurantValidation,
-		Item: itemValidation,
+		validate: validation,
+	},
+	Middleware: {
+		PathHandler: pathHandler,
+		ErrorHandler: errorHandler,
+	},
+	Database: {
+		connect: dbConnection,
+		Schemas: {
+			User: userSchema,
+			Restaurant: restaurantSchema,
+		},
 	},
 };
 
