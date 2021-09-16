@@ -1,0 +1,11 @@
+{
+  "name": "qurba-node-common",
+  "version": "1.0.0",
+  "description": "Common code shared between auth and data servers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karim Mohamed",
+  "license": "ISC"
+}
