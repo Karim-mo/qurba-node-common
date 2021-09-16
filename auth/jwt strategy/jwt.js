@@ -1,4 +1,4 @@
-import { ExtractJwt, JwtStrategy } from 'passport-jwt';
+import { ExtractJwt, Strategy } from 'passport-jwt';
 import User from '../../db/schemas/User.js';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
@@ -13,7 +13,7 @@ const options = {
 // Configure the global passport sent by the driver code to verify our jwt token using our symmetric key
 const verifyToken = (passport) => {
 	passport.use(
-		new JwtStrategy(options, function (jwt_payload, done) {
+		new Strategy(options, function (jwt_payload, done) {
 			console.log(jwt_payload);
 		})
 	);
