@@ -1,6 +1,6 @@
 {
 	"name": "qurba-node-common",
-	"version": "1.2.2",
+	"version": "1.2.6",
 	"description": "Common code shared between auth and data servers",
 	"main": "index.js",
 	"type": "module",
