@@ -6,24 +6,25 @@ import pathHandler from './middleware/path-handler.js';
 import errorHandler from './middleware/error-handler.js';
 import dbConnection from './db/connection/connect.js';
 
-const exports = {
-	Auth: {
-		UserAuth_JWT: userAuth,
-	},
-	FormValidation: {
-		validate: validation,
-	},
-	Middleware: {
-		PathHandler: pathHandler,
-		ErrorHandler: errorHandler,
-	},
-	Database: {
-		connect: dbConnection,
-		Schemas: {
-			User: userSchema,
-			Restaurant: restaurantSchema,
-		},
+const Auth = {
+	UserAuth_JWT: userAuth,
+};
+
+const FormValidation = {
+	validate: validation,
+};
+
+const Middleware = {
+	PathHandler: pathHandler,
+	ErrorHandler: errorHandler,
+};
+
+const Database = {
+	connect: dbConnection,
+	Schemas: {
+		User: userSchema,
+		Restaurant: restaurantSchema,
 	},
 };
 
-export default exports;
+export { Auth, FormValidation, Middleware, Database };
