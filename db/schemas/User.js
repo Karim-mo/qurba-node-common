@@ -9,18 +9,27 @@ const userSchema = mongoose.Schema(
 		},
 		email: {
 			type: String,
-			required: true,
-			unique: true,
+			index: {
+				unique: true,
+				partialFilterExpression: { email: { $type: 'string' } },
+			},
+			sparse: true,
 		},
 		mobile: {
 			type: String,
-			required: true,
-			unique: true,
+			index: {
+				unique: true,
+				partialFilterExpression: { mobile: { $type: 'string' } },
+			},
+			sparse: true,
 		},
 		username: {
 			type: String,
-			required: true,
-			unique: true,
+			index: {
+				unique: true,
+				partialFilterExpression: { username: { $type: 'string' } },
+			},
+			sparse: true,
 		},
 		password: {
 			type: String,

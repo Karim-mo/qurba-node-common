@@ -8,22 +8,17 @@ dotenv.config();
 const connectMongo = async () => {
 	try {
 		if (process.env.NODE_ENV == 'PRODUCTION') {
-			const conn = await mongoose.connect(process.env.MONGO_URI_PROD, {
+			var conn = await mongoose.connect(process.env.MONGO_URI_PROD, {
 				useUnifiedTopology: true,
 				useNewUrlParser: true,
-				useCreateIndex: true,
 			});
-
-			console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
 		} else {
-			const conn = await mongoose.connect(process.env.MONGO_URI_DEV, {
+			var conn = await mongoose.connect(process.env.MONGO_URI_DEV, {
 				useUnifiedTopology: true,
 				useNewUrlParser: true,
-				useCreateIndex: true,
 			});
-
-			console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
 		}
+		console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
 	} catch (error) {
 		console.error(`Error: ${error.message}`.red.underline.bold);
 		process.exit(1);
