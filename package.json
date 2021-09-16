@@ -1,11 +1,21 @@
 {
-  "name": "qurba-node-common",
-  "version": "1.0.0",
-  "description": "Common code shared between auth and data servers",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Karim Mohamed",
-  "license": "ISC"
+	"name": "qurba-node-common",
+	"version": "1.0.0",
+	"description": "Common code shared between auth and data servers",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon index.js"
+	},
+	"author": "Karim Mohamed",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^2.0.12"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"dotenv": "^10.0.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.0.6"
+	}
 }
