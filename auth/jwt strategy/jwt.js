@@ -18,7 +18,7 @@ const verifyToken = () => {
 		new Strategy(
 			options,
 			asyncHandler(async (jwt_payload, done) => {
-				const user = await User.findById(jwt_payload.id);
+				const user = await User.findById(jwt_payload.id).select('-password');
 				if (user) {
 					return done(null, user);
 				} else {
